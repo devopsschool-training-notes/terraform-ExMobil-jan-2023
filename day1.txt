@@ -206,6 +206,87 @@ terraform apply
 terraform destroy
 terraform show
 
+====================================================================
+
+terraform provisioner
+============================
+provisioner is a way to run script/cmd in the following location
+- local machine					- local-exec		only after a resources creation
+- remote machine				- remote-exec		only after a resources creation
+			connection
+					how to login
+- copy a files to remote server - file				only after a resources creation
+			connection
+					how to login
+
+
+terraform provisioner 
+	== ansible
+	== chef
+	== puppet
+	== salt
+
+
+============================================================
+What is terraform?
+Why Terraform?
+How terraform works?
+How to install terraform?
+How to install providers?
+How to write a code and run a code?
+		AWS
+			How to use provisioner??
+		Github
+
+terraform version
+terraform plan
+terraform apply
+terraform destroy
+terraform show
+terraform providers
+=======================================
+Write a terraform code which would create a following resouces
+		- security group - 22 - 80 - 8080 - 443
+		- create a key
+		- create a ebs voume [Optional]
+		- create a ubuntu ec2 instance and do run following commands as a provisioner
+				- sudo apt-get update
+				- sudo apt-get install git -y
+				- sudo apt-get install apache2
+				- download tomcat zip file in /opt/
+				- sudo systemctl start apache2
+
+		with 
+				security group
+				key
+				ebs volume
+
+URL - https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.zip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
