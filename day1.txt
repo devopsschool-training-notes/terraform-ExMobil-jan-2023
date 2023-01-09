@@ -130,9 +130,85 @@ $ terraform init
 
 
 
-
 Step 3 - How to write a code?
 
 How to store a terraform code ---> filename.tf
+
+ONE DIR/
+		file1.tf		aws.tf			or   all.tf		or main.tf
+		file2.tf		azure.tf
+		file3.tf		github.tf
+	================================================================
+								one file = one project
+
+
+FIRST - you must know the provider
+
+Second  - You need to know what are the resources
+
+Pattern
+-------------------------
+Provider	e.g aws
+		resources
+		- resource1 - e.g ec2-instance
+				arugment 1
+				arugment 2
+				arugment 3
+		- resource2		e.g vpc 
+				arugment 1
+				arugment 2
+				arugment 3
+		- resource3		e.g github_repo
+				arugment 1
+				arugment 2
+				arugment 3
+
+
+I want ec2 instance
+===============================
+
+resource "aws_instance" "web" {
+  ami           = "ami-06878d265978313ca"
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+
+
+
+
+
+============================================
+YOU CANT HAVE SAME RES NAME FOR SAME PROVIDER
+============================================
+
+I want github repo to be created
+
+resource "github_repository" "example" {
+  name        = "example3456789"
+  description = "My awesome codebase"
+
+  visibility = "public"
+}
+
+
+How to set github token?
+https://github.com/settings/tokens
+
+
+
+terraform version
+terraform plan
+terraform apply
+terraform destroy
+terraform show
+
+
+
+
+
 
 
