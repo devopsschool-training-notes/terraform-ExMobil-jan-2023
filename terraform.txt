@@ -1,0 +1,102 @@
+# number
+# string
+# list
+# map
+# bool
+# https://www.devopsschool.com/blog/terraform-variables-complete-reference-guide/
+
+variable "numofusers" {
+  type = number
+  description = "This is for demo of number variable"
+  default = 1
+}
+
+variable "create_vm" {
+  description = "If set to true, it will create vm"
+   type   = bool
+}
+
+
+variable "users" {
+    type    = list
+    default = ["devopsschool-1-12345", "devopsschool-1", "devopsschool-3"]
+    description = "This is for demo of list variable"
+}
+
+variable "reponame" {
+  type = string
+  description = "This is for demo of string variable"
+  default = "day-2-jan-2023"
+}
+
+variable "reponame1" {
+  type = string
+  description = "This is for demo of string variable"
+}
+
+resource "github_repository" "repo2" {
+  name = var.reponame1
+  description = "My awesome codebase"
+  visibility = "public"
+}
+
+resource "github_repository" "repo1" {
+  name = var.users[0]
+  description = "My awesome codebase"
+  visibility = "public"
+}
+
+variable "reposs" {
+  type = map
+  default = {
+    "dev" = "day-2-jan-2023-dev"
+    "qa" = "day-2-jan-2023-qa"
+  }
+}
+
+resource "github_repository" "example2" {
+  name        = var.reposs["dev"]
+  description = "My awesome codebase"
+  visibility = "public"
+}
+
+resource "github_repository" "example" {
+  name        = "day-2-jan-2023"
+  description = "My awesome codebase"
+  count = var.numofusers
+
+  visibility = "public"
+}
+
+resource "github_repository" "example1" {
+  name        = var.reponame
+  description = "My awesome codebase"
+  count = var.numofusers
+
+  visibility = "public"
+}
+
+resource "aws_instance" "web" {
+  ami           = "ami-06878d265978313ca"
+  instance_type = "t3.micro"
+  key_name = "rajesh"
+  count = var.numofusers
+  
+  tags = {
+    Name = var.reponame
+  }
+
+  }
+
+
+resource "aws_instance" "web1" {
+  ami           = "ami-06878d265978313ca"
+  instance_type = "t3.micro"
+  key_name = "rajesh"
+  count = var.create_vm ? 1 : 0
+  
+  tags = {
+    Name = var.reponame
+  }
+
+  }
