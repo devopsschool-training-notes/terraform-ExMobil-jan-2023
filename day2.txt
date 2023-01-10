@@ -1,0 +1,23 @@
+How to use Output Variable?
+How to set Conditioning?
+How to iterate / loop a resources?
+	- count
+	- foreach
+Meta Arguments for each resources.
+	- count
+   - foreach
+	- dependson
+https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on
+======================================
+
+
+Dependendecy in Terraform
+- Automated
+
+		ec2
+		vpc
+		
+
+https://www.devopsschool.com/blog/terraform-output-variable-example/
+https://www.devopsschool.com/blog/how-to-do-looping-iterations-in-terraform/
+
