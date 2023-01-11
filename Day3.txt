@@ -1,0 +1,89 @@
+Terraform Worksapce
+================================
+
+IAAS
+PAAS
+
+SAAS
+
+
+terarform workspace list
+terarform workspace new dev
+terarform workspace select dev
+terarform workspace list
+terarform plan
+terarform apply
+terarform workspace select default
+terarform plan
+terarform apply
+terarform workspace delete dev
+==================================================================
+Backend
+==============================================
+Where to store statefile?
+===========================================
+Packer
+-----------------------------
+ is a tool
+	---- For creating an image
+ from Hashipcorp 
+	Golang
+	Free
+=======================================
+Code for everything.
+
+	Write a code for creating a Package
+				- AWS AMI
+				- Azure VM Image
+				- Vagrant box image
+				- docker image
+====================================================
+Step 1 - Install Packer
+Step 2 - Write a Code
+		==============================================
+		Builder			Provisionar				Post-processors
+		----------------------------------------------
+		AWS					Customizing a image	
+						
+							ubuntu
+							- java -> tomcat -> app
+Step 3
+		 
+
+
+Tutorials
+- https://www.devopsschool.com/blog/?s=terraform
+
+Slides 
+- https://www.devopsschool.com/slides/terraform/index.html
+
+Notes
+- https://github.com/devopsschool-training-notes/terraform-ExMobil-jan-2023
+
+How to contact trainer?
+- https://www.rajeshkumar.xyz/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
